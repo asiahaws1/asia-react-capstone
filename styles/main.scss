@@ -1,0 +1,13 @@
+//global
+@use "./global.scss";
+
+//components
+
+@use "./recipe-card.scss";
+
+//pages
+@use "./pages/favorites-page.scss";
+@use "./pages/home.scss";
+@use "./pages/recipe-detail.scss";
+
+//media-queries
