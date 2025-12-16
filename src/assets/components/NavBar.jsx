@@ -1,1 +1,0 @@
-import CartIcon from "./CartIcon";
