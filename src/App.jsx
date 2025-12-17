@@ -6,6 +6,7 @@ import Products from "./components/Products";
 import NavBar from "./components/NavBar";
 import CartPage from "./components/pages/CartPage";
 import icons from "./assets/icons";
+import Contact from "./components/pages/Contact";
 
 icons()
 
@@ -17,7 +18,7 @@ export default function App() {
             <Switch>
                 <Route path="/products" component={Products} />
                 <Route path="/cart" component={CartPage} />
-
+                <Route path="/contact" component={Contact} />
 
                 <Redirect from="/" to="/products"/>
             </Switch>

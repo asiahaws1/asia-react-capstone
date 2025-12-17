@@ -8,18 +8,36 @@ $light-green: #C0CAAD;
 $chocolate-plum: #654C4F;
 $terracotta: #B26E63;
 $gold: #CEC075;
+$violet: #1C0221;
+
+
+
+
+
+
+.products-page {
+  background-color: #592941;
+
+}
 
 .page-title {
   text-align: center;
   margin: 2rem 0;
 
+
   h1 {
     font-size: 2.5rem;
     color: $primary-color;
+    padding-top: 36px;
+   
   }
+
 }
 
+
+
 .products {
+
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
@@ -62,7 +80,7 @@ $gold: #CEC075;
   .product-category {
     font-size: 0.9rem;
   text-transform: capitalize;
-    color: $chocolate-plum;
+    color: #826251;
     margin-bottom: 0.75rem;
   }
 
@@ -70,5 +88,15 @@ $gold: #CEC075;
     font-size: 0.85rem;
     color: #444;
     line-height: 1.4;
+  }
+
+
+  .add-to-cart{
+    background-color: #4059AD;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
   }
 }

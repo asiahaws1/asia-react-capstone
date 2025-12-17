@@ -27,6 +27,13 @@ export default function NavBar() {
                     <span className="total-quantity">{totalQuantity}</span>
                 </button>
             </NavLink>
+            <NavLink to="/contact">
+            <h1>Contact Us</h1>
+            </NavLink>
+
+            <NavLink to="/products">
+            <h1>Products</h1>
+            </NavLink>
         </nav>
     )
 }

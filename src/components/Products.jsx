@@ -8,7 +8,7 @@ import { useCart } from "./pages/CartContext";
 export default function Products() {
 
     const { addToCart } = useCart();
-    
+
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function Products() {
     }, []);
 
     return (
-        <div>
+        <div className="products-page">
             <div className="page-title">
                 <h1>Products</h1>
             </div>
@@ -52,7 +52,7 @@ export default function Products() {
                             {product.description}
                         </p>
 
-                       <button onClick={() => addToCart(product)}>Add To Cart</button>
+                       <button onClick={() => addToCart(product)} className="add-to-cart">Add To Cart</button>
                     </div>
                 ))}
             </div>

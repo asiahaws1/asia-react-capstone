@@ -1,14 +1,37 @@
+* {
+    text-decoration: none;
+}
+
+
+
 .nav-bar {
     display: flex;
     align-items: center;
     padding: 16px;
+
+
+    h1 {
+        padding: 16px;
+        text-decoration: none;
+        color: white;
+    }
+
+    h1:hover {
+        color: rgb(176, 176, 219);
+        transition: color 0.3s ease;
+    }
+   
 }
 
+
 .cart-button {
-    margin-left: auto; 
+    margin-left: auto;
     background: transparent;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .cart-icon {
@@ -17,10 +40,10 @@
 }
 
 .total-quantity {
-    border-radius: 200px;
-    background-color: red;
+    border-radius: 50%;
+    background-color: #4E937A;
     color: white;
     font-size: 16px;
     padding: 8px;
-    margin-bottom: 10px;
+   
 }
