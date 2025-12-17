@@ -7,6 +7,11 @@ import NavBar from "./components/NavBar";
 import CartPage from "./components/pages/CartPage";
 import icons from "./assets/icons";
 import Contact from "./components/pages/Contact";
+import About from "./components/pages/About";
+import Home from "./components/pages/Home";
+
+
+
 
 icons()
 
@@ -19,8 +24,10 @@ export default function App() {
                 <Route path="/products" component={Products} />
                 <Route path="/cart" component={CartPage} />
                 <Route path="/contact" component={Contact} />
+                <Route path="/about" component={About} />
+                <Route path="/home" component={Home} />
 
-                <Redirect from="/" to="/products"/>
+                <Redirect from="/" to="/home"/>
             </Switch>
             </BrowserRouter>
         </div>

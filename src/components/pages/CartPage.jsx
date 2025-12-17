@@ -3,7 +3,7 @@ import { useCart } from "./CartContext";
 
 
 export default function CartPage() {
-  const { cart } = useCart();
+  const { cart, removeFromCart } = useCart();
 
   if (cart.length === 0) {
     return (
@@ -29,6 +29,8 @@ export default function CartPage() {
             <h1 className="cart-title">{item.product.title}</h1>
             <h1 className="cart-price">${item.product.price}</h1>
             <h1 className="cart-quantity">Quantity: {item.quantity}</h1>
+
+            <button onClick={() => removeFromCart(item.product.id)} className="remove-button">Remove</button>
           </div>
         ))}
       </div>
