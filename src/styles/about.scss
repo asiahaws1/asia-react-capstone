@@ -1,0 +1,50 @@
+$primary-color: #ffffff;
+
+$soft-pink: #F4D6E0;
+$lavender: #E6E1F4;
+$sage: #DCE7DF;
+$warm-beige: #F6F1EC;
+$soft-plum: #6B4E71;
+
+
+
+
+.about-title {
+    text-align: center;
+    padding: 20px;
+    font-size: 28px;
+    color: $soft-plum;
+    background-color: #89023E;
+    color: white;
+    border-radius: 16px;
+    margin: 24px;
+}
+
+.capstone-section {
+    background-color: #89023E;
+    border-radius: 16px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 24px;
+    margin: 24px;
+}
+
+.about-section {
+    background-color: #FFD9DA;
+    color: $soft-plum;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.languages-section {
+    background-color: $soft-pink;
+    color: $soft-plum;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 16px;
+    font-size: 18px;
+}

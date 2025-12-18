@@ -7,8 +7,8 @@ export default function Home() {
     <section className="home-hero">
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1>Welcome to </h1>
-          <p>We have all of your stylish, low-price everyday needs. We aim to be the highest standard possible!</p>
+          <h1>Welcome to Aurelia!</h1>
+          <p>We have all of your stylish, low-price everyday needs. We aim to have the highest standard possible!</p>
           <button className="shop-now">Shop Now</button>
         </div>
 
