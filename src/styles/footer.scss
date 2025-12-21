@@ -1,0 +1,56 @@
+@use "./variables" as *;
+
+
+
+
+.site-footer {
+  margin-top: auto;
+  background-color: $violet;
+  color: $primary-color;
+  padding: 2rem 1.5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: $gold;
+  }
+
+  p {
+    font-size: 0.95rem;
+    margin: 0.25rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-content {
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    h2 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.85rem;
+    }
+  }
+}

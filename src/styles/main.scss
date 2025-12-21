@@ -12,6 +12,8 @@
 
 @use "./loading.scss";
 
+@use "./footer.scss";
+
 // //pages
 
 @use "./cartpage.scss";
@@ -24,6 +26,9 @@
 @use "./product-detail.scss";
 
 @use "./home.scss";
+
+
+@use "./not-found.scss"
 // //media-queries
 
 
