@@ -32,10 +32,6 @@ export default function NavBar() {
             <NavLink to="/home">
             <h1>Home</h1>
             </NavLink>
-            
-            <NavLink to="/contact">
-            <h1>Contact Us</h1>
-            </NavLink>
 
             <NavLink to="/products">
             <h1>Products</h1>
@@ -44,6 +40,11 @@ export default function NavBar() {
             <NavLink to="/about">
             <h1>About</h1>
             </NavLink>
+
+            <NavLink to="/contact">
+            <h1>Contact Us</h1>
+            </NavLink>
+
 
 
             

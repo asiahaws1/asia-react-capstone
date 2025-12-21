@@ -9,6 +9,8 @@ import icons from "./assets/icons";
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
 import Home from "./components/pages/Home";
+import ProductDetail from "./components/pages/ProductDetail";
+
 
 
 
@@ -19,16 +21,19 @@ export default function App() {
     return (
         <div>
             <BrowserRouter>
-            <NavBar />
-            <Switch>
-                <Route path="/products" component={Products} />
-                <Route path="/cart" component={CartPage} />
-                <Route path="/contact" component={Contact} />
-                <Route path="/about" component={About} />
-                <Route path="/home" component={Home} />
+                <NavBar />
+                <Switch>
+                    <Route exact path="/products" component={Products} />
+                    <Route path="/products/:id" component={ProductDetail} />
 
-                <Redirect from="/" to="/home"/>
-            </Switch>
+                    <Route path="/cart" component={CartPage} />
+                    <Route path="/contact" component={Contact} />
+                    <Route path="/about" component={About} />
+                    <Route path="/home" component={Home} />
+
+                    <Redirect from="/" to="/home" />
+                </Switch>
+
             </BrowserRouter>
         </div>
     )
