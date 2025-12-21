@@ -1,9 +1,15 @@
+@use "./variables" as *;
+
 * {
   box-sizing: border-box;
   text-decoration: none;
 }
 
+
 .nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   padding: 1rem 2.5rem;
@@ -13,17 +19,12 @@
 
 .nav-bar h1 {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #eaeaea;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 8px;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-.nav-bar h1:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: white;
+  cursor: pointer;
 }
 
 .cart-button {
@@ -36,16 +37,11 @@
   display: flex;
   align-items: center;
   position: relative;
-  transition: background-color 0.25s ease;
-}
-
-.cart-button:hover {
-  background: rgba(255, 255, 255, 0.12);
 }
 
 .cart-icon {
   font-size: 26px;
-  color: #cec075;
+  color: $gold;
 }
 
 .total-quantity {
@@ -62,4 +58,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .nav-bar {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-bar h1 {
+    font-size: 0.95rem;
+  }
 }

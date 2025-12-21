@@ -1,97 +1,181 @@
-$primary-color: white;
+@use "./variables" as *;
 
-$border-radius: 12px;
-
-
-$gray-green: #9DA9A0;
-$light-green: #C0CAAD;
-$chocolate-plum: #654C4F;
-$terracotta: #B26E63;
-$gold: #CEC075;
-$blue: #364156;
-$lavender: #7B5E7B;
-
-
-
-.cart-page-title {
-    color: darkmagenta;
-    font-size: 36px;
+.cart-page {
+  padding: 2rem;
+  background: $warm-beige;
 }
 
-.empty-cart {
-    text-align: center;
-    margin: 2rem 0;
-
-    h1 {
-        font-size: 32px;
-        color: $primary-color;
-    }
-
-    p {
-        font-size: 18px;
-        color: $primary-color;
-    }
-}
-
-
 .cart-page-title {
-    text-align: center;
-    margin: 2rem 0;
-
-    h1 {
-        font-size: 2.5rem;
-        color: $primary-color;
-    }
+  text-align: center;
+  font-size: 2.2rem;
+  color: $chocolate-plum;
+  margin-bottom: 2rem;
 }
 
 .cart {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
 .cart-card {
-    background-color: $light-green;
-    border-radius: $border-radius;
-    padding: 1.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: $light-green;
+  border-radius: $border-radius;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
 
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-    }
+.cart-card:hover {
+  transform: translateY(-4px);
+}
 
+.cart-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
 
+.cart-title {
+  font-size: 1rem;
+  text-align: center;
+  color: $chocolate-plum;
+  margin-bottom: 0.5rem;
+}
 
+.cart-price {
+  font-size: 1.1rem;
+  color: $terracotta;
+  margin-bottom: 1rem;
+}
 
-    .cart-image {
-        width: 100%;
-        height: 220px;
-        object-fit: contain;
-        margin-bottom: 1rem;
-    }
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
 
-    .cart-title {
-        font-size: 18px;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
-        color: $chocolate-plum;
-    }
+.quantity-controls button {
+  background: $gray-green;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  color: $violet;
+}
 
-    .cart-price {
-        font-size: 18px;
-        font-weight: bold;
-        color: #96554A;
-        margin-bottom: 0.25rem;
-    }
+.quantity-controls h3 {
+  margin: 0;
+  min-width: 24px;
+  text-align: center;
+  color: $violet;
+}
 
+.remove-button {
+  background: $soft-plum;
+  color: $primary-color;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
 
+.cart-summary {
+  max-width: 420px;
+  margin: 3rem auto 0;
+  background: $terracotta;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  text-align: center;
+}
 
-    .cart-quantity {
-        font-size: 0.85rem;
-        color: $chocolate-plum;
-        line-height: 1.4;
-    }
+.cart-summary p {
+  margin: 0.4rem 0;
+  color: white;
+}
+
+.cart-summary h2 {
+  margin: 1rem 0;
+  color: white;
+}
+
+.checkout-button {
+  background: lightblue;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  color: $violet;
+  color: $chocolate-plum;
+  font-weight: 600;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: $chocolate-plum;
+}
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 2, 33, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-modal {
+  background: $light-green;
+  border-radius: $border-radius;
+  padding: 2rem;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  
+}
+
+.cart-modal h2 {
+  margin-bottom: 0.5rem;
+  color: $chocolate-plum;
+}
+
+.cart-modal p {
+  margin-bottom: 1.5rem;
+  color: $violet;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modal-actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  background: $terracotta;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .cart {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    margin-top: 2rem;
+  }
+
+  .cart-page-title {
+    font-size: 1.8rem;
+  }
 }

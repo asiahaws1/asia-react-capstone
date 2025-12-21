@@ -1,3 +1,5 @@
+import { useState } from "react";
+import Modal from "react-modal";
 import { useCart } from "./CartContext";
 
 export default function CartPage() {
@@ -11,6 +13,10 @@ export default function CartPage() {
     shipping,
     total
   } = useCart();
+
+  const [removeOpen, setRemoveOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
+  const [activeId, setActiveId] = useState(null);
 
   if (cart.length === 0) {
     return (
@@ -26,7 +32,7 @@ export default function CartPage() {
       <h1 className="cart-page-title">Your cart</h1>
 
       <div className="cart">
-        {cart.map(item => (
+        {cart.map((item) => (
           <div key={item.product.id} className="cart-card">
             <img
               className="cart-image"
@@ -38,7 +44,12 @@ export default function CartPage() {
             <h1 className="cart-price">${item.product.price}</h1>
 
             <div className="quantity-controls">
-              <button onClick={() => decreaseQuantity(item.product.id)}>
+              <button
+                onClick={() =>
+                  item.quantity > 1 &&
+                  decreaseQuantity(item.product.id)
+                }
+              >
                 -
               </button>
 
@@ -51,7 +62,10 @@ export default function CartPage() {
 
             <button
               className="remove-button"
-              onClick={() => removeFromCart(item.product.id)}
+              onClick={() => {
+                setActiveId(item.product.id);
+                setRemoveOpen(true);
+              }}
             >
               Remove
             </button>
@@ -66,11 +80,61 @@ export default function CartPage() {
 
         <button
           className="checkout-button"
-          onClick={clearCart}
+          onClick={() => setCheckoutOpen(true)}
         >
           Checkout
         </button>
       </div>
+
+      <Modal
+        isOpen={removeOpen}
+        onRequestClose={() => setRemoveOpen(false)}
+        className="cart-modal"
+        overlayClassName="cart-overlay"
+      >
+        <h2>Remove item?</h2>
+        <p>This will remove the item from your cart.</p>
+
+        <div className="modal-actions">
+          <button
+            onClick={() => {
+              removeFromCart(activeId);
+              setRemoveOpen(false);
+            }}
+          >
+            Remove
+          </button>
+
+          <button onClick={() => setRemoveOpen(false)}>
+            Cancel
+          </button>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={checkoutOpen}
+        onRequestClose={() => setCheckoutOpen(false)}
+        className="cart-modal"
+        overlayClassName="cart-overlay"
+      >
+        <h2>Checkout</h2>
+        <p>Ready to complete your order?</p>
+
+        <div className="modal-actions">
+          <button
+            onClick={() => {
+              clearCart();
+              setCheckoutOpen(false);
+            }}
+          >
+            Confirm
+          </button>
+
+          <button onClick={() => setCheckoutOpen(false)}>
+            Cancel
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 }
